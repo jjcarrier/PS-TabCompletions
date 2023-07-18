@@ -11,6 +11,7 @@ others may simply hook into the command's built-in tab-completion interfaces.
 
 ```pwsh
 git checkout git@github.com:jjcarrier/PSTabCompletions.git
+Install-Module HelpParser
 ```
 
 ## Additional Notes
