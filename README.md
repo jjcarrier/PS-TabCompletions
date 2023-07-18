@@ -9,9 +9,19 @@ others may simply hook into the command's built-in tab-completion interfaces.
 
 ## Installation
 
+Install dependencies from `PSGallery` and clone the repo:
+
 ```pwsh
+Install-Module -Name posh-git -Repository PSGallery
+Install-Module -Name HelpParser -Repository PSGallery
 git checkout git@github.com:jjcarrier/PSTabCompletions.git
-Install-Module HelpParser
+cd PSTabCompletions
+```
+
+Add the module to your `$PROFILE`:
+
+```pwsh
+Import-Module ./TabCompletions.psm1
 ```
 
 ## Additional Notes
