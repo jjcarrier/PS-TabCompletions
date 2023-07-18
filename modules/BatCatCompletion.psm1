@@ -6,15 +6,15 @@ $batScriptBlock = {
 	$helpData = bat --help
 	$paramValueAssign = $wordToComplete.Contains('=') -and $wordToComplete.IndexOf("=") -lt $cursorPosition
 	if ($wordToComplete.StartsWith("--") -and -not $paramValueAssign) {
-		Get-ParsedHelpOptions -HelpData $helpData |
+		Get-ParsedHelpOption -HelpData $helpData |
 			New-ParsedHelpParamCompletionResult -WordToComplete $wordToComplete
 	} elseif ($wordToComplete.StartsWith("-") -and -not $paramValueAssign) {
-		Get-ParsedHelpFlags -HelpData $helpData |
+		Get-ParsedHelpFlag -HelpData $helpData |
 			New-ParsedHelpParamCompletionResult -WordToComplete $wordToComplete
 	} else {
 		$resultPrefix = ''
 		$values = $helpData |
-			Get-ParsedHelpParamValues `
+			Get-ParsedHelpParamValue `
 				-WordToComplete $wordToComplete `
 				-CommandAst $commandAst `
 				-CursorPosition $cursorPosition `
