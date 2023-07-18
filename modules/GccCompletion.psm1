@@ -6,15 +6,15 @@ $gdbScriptBlock = {
 	$helpData = gdb --help
 	$paramValueAssign = $wordToComplete.Contains('=') -and $wordToComplete.IndexOf("=") -lt $cursorPosition
 	if ($wordToComplete.StartsWith("--") -and -not $paramValueAssign) {
-		Get-ParsedHelpOptions -HelpData $helpData |
+		Get-ParsedHelpOption -HelpData $helpData |
 			New-ParsedHelpParamCompletionResult -WordToComplete $wordToComplete
 	} elseif ($wordToComplete.StartsWith("-") -and -not $paramValueAssign) {
-		Get-ParsedHelpFlags -HelpData $helpData |
+		Get-ParsedHelpFlag -HelpData $helpData |
 			New-ParsedHelpParamCompletionResult -WordToComplete $wordToComplete
 	} else {
 		$resultPrefix = ''
 		$values = $helpData |
-			Get-ParsedHelpParamValues `
+			Get-ParsedHelpParamValue `
 				-WordToComplete $wordToComplete `
 				-CommandAst $commandAst `
 				-CursorPosition $cursorPosition `
@@ -30,15 +30,15 @@ $gccScriptBlock = {
 	$helpData = gcc --help
 	$paramValueAssign = $wordToComplete.Contains('=') -and $wordToComplete.IndexOf("=") -lt $cursorPosition
 	if ($wordToComplete.StartsWith("--") -and -not $paramValueAssign) {
-		Get-ParsedHelpOptions -HelpData $helpData |
+		Get-ParsedHelpOption -HelpData $helpData |
 			New-ParsedHelpParamCompletionResult -WordToComplete $wordToComplete
 	} elseif ($wordToComplete.StartsWith("-") -and -not $paramValueAssign) {
-		Get-ParsedHelpFlags -HelpData $helpData |
+		Get-ParsedHelpFlag -HelpData $helpData |
 			New-ParsedHelpParamCompletionResult -WordToComplete $wordToComplete
 	} else {
 		$resultPrefix = ''
 		$values = $helpData |
-			Get-ParsedHelpParamValues `
+			Get-ParsedHelpParamValue `
 				-WordToComplete $wordToComplete `
 				-CommandAst $commandAst `
 				-CursorPosition $cursorPosition `
@@ -54,15 +54,15 @@ $gppScriptBlock = {
 	$helpData = g++ --help
 	$paramValueAssign = $wordToComplete.Contains('=') -and $wordToComplete.IndexOf("=") -lt $cursorPosition
 	if ($wordToComplete.StartsWith("--") -and -not $paramValueAssign) {
-		Get-ParsedHelpOptions -HelpData $helpData |
+		Get-ParsedHelpOption -HelpData $helpData |
 			New-ParsedHelpParamCompletionResult -WordToComplete $wordToComplete
 	} elseif ($wordToComplete.StartsWith("-") -and -not $paramValueAssign) {
-		Get-ParsedHelpFlags -HelpData $helpData |
+		Get-ParsedHelpFlag -HelpData $helpData |
 			New-ParsedHelpParamCompletionResult -WordToComplete $wordToComplete
 	} else {
 		$resultPrefix = ''
 		$values = $helpData |
-			Get-ParsedHelpParamValues `
+			Get-ParsedHelpParamValue `
 				-WordToComplete $wordToComplete `
 				-CommandAst $commandAst `
 				-CursorPosition $cursorPosition `
@@ -78,15 +78,15 @@ $gcovScriptBlock = {
 	$helpData = gcov --help
 	$paramValueAssign = $wordToComplete.Contains('=') -and $wordToComplete.IndexOf("=") -lt $cursorPosition
 	if ($wordToComplete.StartsWith("--") -and -not $paramValueAssign) {
-		Get-ParsedHelpOptions -HelpData $helpData |
+		Get-ParsedHelpOption -HelpData $helpData |
 			New-ParsedHelpParamCompletionResult -WordToComplete $wordToComplete
 	} elseif ($wordToComplete.StartsWith("-") -and -not $paramValueAssign) {
-		Get-ParsedHelpFlags -HelpData $helpData |
+		Get-ParsedHelpFlag -HelpData $helpData |
 			New-ParsedHelpParamCompletionResult -WordToComplete $wordToComplete
 	} else {
 		$resultPrefix = ''
 		$values = $helpData |
-			Get-ParsedHelpParamValues `
+			Get-ParsedHelpParamValue `
 				-WordToComplete $wordToComplete `
 				-CommandAst $commandAst `
 				-CursorPosition $cursorPosition `
