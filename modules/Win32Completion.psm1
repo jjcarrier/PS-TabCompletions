@@ -80,7 +80,7 @@ $pingScriptBlock = {
     $helpData = Invoke-Expression 'ping -?'
     $paramValueAssign = $wordToComplete.Contains('=') -and $wordToComplete.IndexOf('=') -lt $cursorPosition
     if ($wordToComplete.StartsWith("--") -and -not $paramValueAssign) {
-        Get-ParsedHelpFlag -HelpData $helpData |
+        Get-ParsedHelpOption -HelpData $helpData |
             New-ParsedHelpParamCompletionResult -WordToComplete $wordToComplete
     } elseif ($wordToComplete.StartsWith("-") -and -not $paramValueAssign) {
         Get-ParsedHelpFlag -HelpData $helpData |
@@ -108,7 +108,7 @@ $netstatScriptBlock = {
     $helpData = Invoke-Expression 'netstat -? 2>&1'
     $paramValueAssign = $wordToComplete.Contains('=') -and $wordToComplete.IndexOf('=') -lt $cursorPosition
     if ($wordToComplete.StartsWith("--") -and -not $paramValueAssign) {
-        Get-ParsedHelpFlag -HelpData $helpData |
+        Get-ParsedHelpOption -HelpData $helpData |
             New-ParsedHelpParamCompletionResult -WordToComplete $wordToComplete
     } elseif ($wordToComplete.StartsWith("-") -and -not $paramValueAssign) {
         Get-ParsedHelpFlag -HelpData $helpData |
@@ -134,7 +134,7 @@ $tracertScriptBlock = {
     $helpData = Invoke-Expression 'tracert -?'
     $paramValueAssign = $wordToComplete.Contains('=') -and $wordToComplete.IndexOf('=') -lt $cursorPosition
     if ($wordToComplete.StartsWith("--") -and -not $paramValueAssign) {
-        Get-ParsedHelpFlag -HelpData $helpData |
+        Get-ParsedHelpOption -HelpData $helpData |
             New-ParsedHelpParamCompletionResult -WordToComplete $wordToComplete
     } elseif ($wordToComplete.StartsWith("-") -and -not $paramValueAssign) {
         Get-ParsedHelpFlag -HelpData $helpData |
