@@ -12,7 +12,7 @@ others may simply hook into the command's built-in tab-completion interfaces.
 Clone the repo:
 
 ```pwsh
-git checkout git@github.com:jjcarrier/PSTabCompletions.git
+git clone git@github.com:jjcarrier/PSTabCompletions.git
 cd PSTabCompletions
 ```
 
