@@ -28,7 +28,10 @@ Import-Module "$PSScriptRoot/modules/DfuUtilCompletion.psm1"
 
 # Windows-Centric Tools
 if ($IsWindows) {
+    # Note while this is an additional dependency, it is not added to the
+    # "Requires" statement above since it is only relevant for Windows.
     Import-Module -Name WSLTabCompletion
+
     Import-Module "$PSScriptRoot/modules/WinGetCompletion.psm1"
     Import-Module "$PSScriptRoot/modules/UsbIpdCompletion.psm1"
     Import-Module "$PSScriptRoot/modules/Win32Completion.psm1"
