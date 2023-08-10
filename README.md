@@ -31,8 +31,9 @@ Install-Module -Name "WSLTabCompletion" -Repository PSGallery
 
 > **Note**
 > While `HelpParser` could provide tab completion for these commands, these
-  dedicated solutions offer a more complete experience and is recommended over
-  the more general purpose `HelpParser` tab completion functionality.
+  dedicated solutions offer a more complete (command/parameter) experience and
+  is recommended over the more general purpose `HelpParser` tab completion
+  functionality.
 
 Add the module to your `$PROFILE`:
 
@@ -50,8 +51,8 @@ PSGallery.
 Install-Module -Name "PSReadLine" -Repository PSGallery
 ```
 
-The following a recommended configuration that can be added to `$PROFILE`. The
-last line being the most essential setting.
+The following is a recommended configuration that can be added to `$PROFILE`.
+The last line being the most essential setting.
 
 ```pwsh
 Set-PSReadLineOption -HistoryNoDuplicates:$true
